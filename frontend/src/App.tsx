@@ -4,6 +4,7 @@ import { DashboardLayout } from './components/layout/DashboardLayout'
 import { DashboardError, DashboardLoading } from './components/pages/DashboardLoading'
 import { OverviewPage } from './components/pages/OverviewPage'
 import { PlaceholderPage } from './components/pages/PlaceholderPage'
+import { DSAPage } from './components/dsa/DSAPage'
 import type { DashboardData, NavItemId } from './types/dashboard'
 
 function App() {
@@ -83,6 +84,8 @@ function App() {
           searchQuery={searchQuery}
           onNavigate={handleNavigate}
         />
+      ) : activeNav === 'dsa' ? (
+        <DSAPage />
       ) : (
         <PlaceholderPage navId={activeNav} onBackToOverview={() => handleNavigate('overview')} />
       )}
